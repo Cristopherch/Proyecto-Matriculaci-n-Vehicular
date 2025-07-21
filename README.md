@@ -14,13 +14,13 @@ Poryecto desarrollado por:
 ## **Descripción del Proyecto**📝
 
 * El programa creado puede registrar información vehicular básica y en base a ello calcular el valor de matrícula y guardar su información. Esto en respuesta a los conocimientos de nuestro grupo que adquirimos durante el transcurso del semestre.
-* Permite registrar un usuario y contraseña para acceder a un menú, puede registrar información como placa, año, tipo de vehículo y su avaluo; calcular matrícula en base a impuestos establecidos en Ecuador y guardar el recibo a pagar con los datos vehiculares.
+* Permite registrar un usuario y contraseña para acceder a un menú, sin ello no tendra acceso a las demás funciones, dentro del menú puede registrar información como placa, año, tipo de vehículo y su avaluo; calcular matrícula en base a impuestos establecidos en Ecuador y guardar el recibo a pagar con los datos vehiculares en los archivos `datosVehiculares`, `datosVehiculares .
 * En la parte de desarrollo se aplico estructuras selectivas y repetitivas: `if-else`, `switch`, `for`, `do-while`. Además, se implementaron estructuras definidas y una variable global para el conteo de vehículos registrados.
 
 ---
 
 ## **Tutorial para Compilar y Ejecutar** ⚙️
-Para que puedas probrar nuestro código te dejamos los pasos a seguir. Te recordamos que debes tener un compilador de C.
+Para que puedas probrar nuestro código desde una terminal te dejamos los pasos a seguir. Te recordamos que debes tener un compilador de C.
 
 1. **Clonar el repositorio**
 ```bash
@@ -46,6 +46,12 @@ gcc main.c mivehiculo.c matricula.c validacion.c
 1. Abre Zinjai.
 2. Ve a `Archivo` → `Nuevo Proyecto` y selecciona las cabeceras y fuentes, asegurate de incluir el `main.c`
 3. Presiona en el boton **compilar** y luego en **ejecutar**
+
+---
+
+## **Limitantes**
+* El programa solo admite un máximo de 100 vehículos
+* Se deben respetar los formatos de datos que se ingresa para el registro vehicular, cálculo de matrícula y guardado de datos
 
 ---
 
