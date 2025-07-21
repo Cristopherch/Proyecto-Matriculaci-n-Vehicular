@@ -1,2 +1,74 @@
-# Proyecto-Matriculación-Vehicular
-Proyecto Matriculación Vehicular Grupo 7
+# 📖 "Movilidad Inteligente: Un Enfoque Integral en la Matriculación Vehicular"
+Programa en C que te permite registrar información vehicular y calcular el valor de su matrícula.
+
+---
+
+## Integrantes 👥
+Poryecto desarrollado por:
+* **Cristopher Chamorro** _Rol: Tester_ - [@]()
+* **David Pesantez** _Rol: Jefe de proyecto_ - [@]()
+* **Erick Puglla** _Rol: Desarrollador_ - [@]()
+
+---
+
+## **Descripción del Proyecto**📝
+
+* El programa creado puede registrar información vehicular básica y en base a ello calcular el valor de matrícula y guardar su información. Esto en respuesta a los conocimientos de nuestro grupo que adquirimos durante el transcurso del semestre.
+* Permite registrar un usuario y contraseña para acceder a un menú, puede registrar información como placa, año, tipo de vehículo y su avaluo; calcular matrícula en base a impuestos establecidos en Ecuador y guardar el recibo a pagar con los datos vehiculares.
+* En la parte de desarrollo se aplico estructuras selectivas y repetitivas: `if-else`, `switch`, `for`, `do-while`. Además, se implementaron estructuras definidas y una variable global para el conteo de vehículos registrados.
+
+---
+
+## **Tutorial para Compilar y Ejecutar** ⚙️
+Para que puedas probrar nuestro código te dejamos los pasos a seguir. Te recordamos que debes tener un compilador de C.
+
+1. **Clonar el repositorio**
+```bash
+git clone [https://github.com/tu-usuario/nombre-del-repositorio.git](https://github.com/tu-usuario/nombre-del-repositorio.git)
+```
+2. **Navegar a la carpeta del proyecto**
+```bash
+cd nombre-del-repositorio
+```
+3. **Compilar el código**
+```bash
+gcc main.c mivehiculo.c matricula.c validacion.c
+```
+4. **Ejecutar el programa**
+```bash
+./registro_vehicular
+```
+---
+
+### 💡 Alternativa usando Zinjai (IDE)
+> Puedes usar [Zinjai](https://zinjai.sourceforge.net/) para compilar y ejecutar el código.
+* Sigue estos pasos:
+1. Abre Zinjai.
+2. Ve a `Archivo` → `Nuevo Proyecto` y selecciona las cabeceras y fuentes, asegurate de incluir el `main.c`
+3. Presiona en el boton **compilar** y luego en **ejecutar**
+
+---
+
+## **Estructura de Archivos** 📂
+
+A continuación se explica brevemente los archivos que forman parte del código:
+
+```
+.
+├──main.c                  # Archivo donde se llama a todas las funciones y que contiene el menú del usuario.
+├──mivehiculo.c
+├──matricula.c             # Archivos que contienen el desarrollo de las funciones para registro de vehículos, cálculo de matrícula, guardado de de 
+├──validacion.c              información y verficación que los datos de enetrada esten con el formato correcto.
+├──mivehiculo.h
+├──matricula.h             # Archivos de cabecera donde se declararon las funciones.
+├──validacion.h
+├──README
+
+```
+---
+
+## **Información del curso** 🏫
+* **Asignatura:** Programación I
+* **Docente:** Nelson Herrera
+* **Semestre:** Primer Semestre
+* **Universidad:** Escuela Politécnia Nacional
