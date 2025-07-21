@@ -24,11 +24,11 @@ Para que puedas probrar nuestro código desde una terminal te dejamos los pasos 
 
 1. **Clonar el repositorio**
 ```bash
-git clone [https://github.com/tu-usuario/nombre-del-repositorio.git](https://github.com/tu-usuario/nombre-del-repositorio.git)
+git clone [https://github.com/Cristopherch/Proyecto-Matriculaci-n-Vehicular.git](https://github.com/Cristopherch/Proyecto-Matriculaci-n-Vehicular.git)
 ```
 2. **Navegar a la carpeta del proyecto**
 ```bash
-cd nombre-del-repositorio
+cd Proyecto-Matriculaci-n-Vehicular
 ```
 3. **Compilar el código**
 ```bash
