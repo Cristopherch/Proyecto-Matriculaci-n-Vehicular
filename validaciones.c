@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 #include "validaciones.h"
 #define VEHICULOS_MAX 100
 
@@ -71,8 +72,8 @@ int validacionCedula(char cedula[]){
 		return 0;
 	} 
 	for (size_t i = 0; i < longitud; i++){
-		if (!isdigit(cedula[i])){ // isdigit() verifica si el caracter es un dígito (0-9)
-			return 0; // Error: contiene caracteres no numéricos
+		if (!isdigit(cedula[i])){ // isdigit() verifica si el caracter es un dÃ­gito (0-9)
+			return 0; // Error: contiene caracteres no numÃ©ricos
 		}
 	}
 	
@@ -131,11 +132,11 @@ int esNumero(const char* cadena) {
 	// Ignorar espacios al inicio
 	while (cadena[i] == ' ') i++;
 	
-	// Si está vacía, no es número
+	// Si estÃ¡ vacÃ­a, no es nÃºmero
 	if (cadena[i] == '\0' || cadena[i] == '\n')
 		return 0;
 	
-	// Verificar que cada carácter sea dígito
+	// Verificar que cada carÃ¡cter sea dÃ­gito
 	for (; cadena[i] != '\0' && cadena[i] != '\n'; i++) {
 		if (isdigit(cadena[i])){
 			digitos++;
