@@ -1,0 +1,33 @@
+-----------------------------------------------------------------
+Manual de Usuario: Registro de Vehiculos
+-----------------------------------------------------------------
+1. **Introducción:**
+   Este manual le guiara a traves del uso adecuado del programa para registrar un vehículo.
+2. **Partes del Programa:**
+   - Inicio de sesión
+   - Registro de Usuario
+   - Registrar datos del vehiculo
+   - Calcular matricula
+   - Buscar vehículo por placa
+   - Imprimir listado de vehículos matriculados
+   - Salir del programa
+3. **Uso del Programa:**
+   1)  Ingresar el nombre de usuario y el número de cédula.
+   2)  Ingresar su contraseña (debe tener de entre 8 a 10 caracteres).
+   3)  En caso de no estar registrado, debe registrarse.
+   4)  Una vez en el inicio ingrese la opción número 1 para registrar un vehículo.
+   5)  Una vez dentro de la opción número 1, seguir los pasos que se indican dentro del programa 
+       para registrar correctamente el vehículo.
+   6)  Después de haber registrado su vehículo vuelva al inicio e ingrese la opción numero 2.
+   7)  Ya dentro de la opción "calcular matricula" ingrese la placa del vehículo o vehículos previamente
+       registrados.
+   8)  Ingresar el número de revisions técnicas cumplidas entre 0 y 2 revisiones (en caso de no tener ninguna revisión 
+       técnica no podra seguir matriculando su vehículo).
+   9)  Posteriormente ingrse los meses de retraso en la matriculación y el valor de las multas.
+   10)  Tras recibir su comprobante seleccione si quiere pagar en este momento (recuerde que tiene un plazo de 15 días para
+       pagar el valor de la matricula), en caso de que si quiera pagar ahora siga los siguientes pasos:
+       - Pago en efectivo: En caso de pago en efectivo debe acercarse a pagar a la caja personalmente.
+       - Pago en transferencia: En caso de pago en transferencia ingrese los datos necesarios para la transferencia.
+   11) Con su vehículo registrado puede ingresar a la opción número 3 y buscar su vehículo dependiendo el número de placa.
+   12) Con su vehículo registrado podra ingresar a la opción número 4 y guardar los datos de el o los vehículos registrados.
+   13) Finalmente si ya no tiene nada más que hacer en el programa ingrese la opción número 5 para salir.
