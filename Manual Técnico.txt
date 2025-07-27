@@ -1,0 +1,91 @@
+
+Manual Técnico para el Programa de Matriculación Vehicular desarrollado en C
+
+1. Propósito del programa
+
+ El programa desarrollado tiene como propósito implementar un sistema simple o básico, enfocado en la matriculación de vehículos. 
+ Esto se ejecutará mediante la obtención de datos importantes del vehículo, con las respectivas validaciones. Todos estos datos se 
+ almacenarán en estructuras creadas, con el fin de que se usen para futuros procesos o cálculos.
+
+2. Estructura del programa
+
+ El programa en general se encuentra organizado en módulos, para que sea más eficiente la lectura y modificación del código, en el programa 
+ se encuentran los archivos "cabeceras" y los archivos "fuentes", estos archivos son toda la estructura del código:
+
+ ■ Archivos Fuentes:
+
+  - mains.c --> Entrada principal del programa               
+  - mivehiculo.c --> Funciones declaradas con sus parámetros, para usarlas en el mains.c(referentes a datos vehiculares).
+  - matricular.c --> Funciones declaradas con sus parámetros, para usarlas en el mains.c(referentes a la matricula vehicular).       
+  - validaciones.c --> Validaciones generales referentes a datos del vehículo(año, placa, tipo, avalúo,etc).
+  - logerrores.c --> Función para abrir un .txt en el caso de que se encuentre algún error de ejecución.
+  - usuario.c --> Funciones para validar la existencia y registro de un usuario, con uso de archivos .txt
+          
+ ■ Archivos Cabeceras: 
+   
+  - mivehiculo.h --> Creación de la estructura que almacenará los datos del vehículo y declaración de las funciones para el registro de un nuevo vehículo.
+  - matricular.h --> Creación de la estructura que almacenará los datos para la matriculación y declaración de las funciones para el cálculo de la matrícula de un vehículo.          
+  - validaciones.h --> Declaración de las funciones que validarán los datos.
+  - logerrores.h --> Declaración de la función para detectar los errores.
+  - usuario.h --> Validaciones del usuario y contraseña.
+
+ ■ Archivos de texto:
+ 
+  - usuario.txt --> Este archivo almacenará todos los usuarios registrados, para validar el inicio de sesión. 
+  - datosVehiculares.txt --> Este archivo almacenará solamente datos del vehículo registardo(año, avalúo, tipo, placa, cédula).
+  - datosVehicularesMatriculacion.txt --> Este archivo almacenará los datos de matriculación(año, avalúo, tipo, placa, multas, recargos, impuesto al rodaje, valor de matrícula a pagar, etc).)
+  - logerrores.txt --> En el caso de la existencia de errores, se creará un archivo que guardará el error y la hora específica en la que se da el error.
+
+3. Variables Globales
+
+ En el programa se usan variables globales en 'mivehiculo.c':
+
+ - VEHICULOS_MAX: La cual se usa para establecer un límite de vehículos, en este caso, 100 
+ - int numVehiculo: La cual se declara con 'extern' en 'mivehiculo.h', para usarla globalmente, es decir, en alguna parte necesaria del programa.
+
+4. Ejecución del programa
+
+ Para la ejecución del programa hay que aclarar que si se usa el IDE 'Zinjai', se deben agregar todos los archivos 
+ '.c' y '.h', en su respectivo módulo, para evitar errores al momento de la ejecución o usar el ejecutable llamado "PROYECTO MATRICULACION".
+
+5. Funcionamiento del programa
+
+ El sistema en la ejecución se presentará de la siguiente forma:
+
+ ■ Parte 1: INICIO DE SESIÓN
+
+  - Se muestra una pantalla que permite ingresar el usuario y la contraseña
+  - Si es nuevo ingreso, se validará como 'usuario inexistente' y se preguntará si desea registrarse,
+  si la respusta es 'sí' se almacenará el usuario y la contraseña que hayan sido ingresados, caso contrario, 
+  no se registrará el usuario.
+  - Si el usuario ya existe, se validará que ingrese correctamente la contraseña y se iniciará sesión.
+
+ ■ Parte 2: MENÚ DE MATRICULACIÓN
+
+  - Ya iniciado sesión se procede a mostrar el menú de opciones:
+  -Permite registrar, buscar y listar vehículos.
+  -Realiza el cálculo de la matrícula y el respectivo pago(solo como simulación).
+  -Permite elegir si desea guardar los datos del vehículo o el comprobante de la matrícula.
+
+6. Validaciones y errores
+
+ Durante la ejecución del programa se estarán validando varios aspectos, esto con las funciones que se encuentran en 'validaciones.c':
+  - validacionPlaca() --> la cual validará la longitud, el guión de la placa, que los primeros 3 dígitos sean letras mayúsculas o minúsculas y que los últimos 4 dígitos sean números.
+  - validacionCedula() --> se valida la longitud y que solo sean dígitos.
+  - validacionAvaluo() --> se valida que esté entre $2000.00 y $400000.00.
+  - validacionAnio() --> se valida que esté entre 2000 y 2026.
+  - validacionTipo() --> ya sea liviano o pesado.
+  - validacionContraseña() --> que cumpla con la longitud y que exista.
+  - También se validará si existe algún error en la ejecución, por ejemplo que no se abra algún archivo txt.
+
+7. Recomendaciones
+
+ - En el caso de hacer modificaciones, documentar lo que se ha hecho, para futuras circunstancias.
+ - Si se agrega alguna nueva función, mantener la estructura en módulos o librerías. 
+ - Implementar correctamente validaciones, para evitar errores del programa. 
+
+8. Desarrolladores
+El programa fue diseñado y desarrollado por Cristopher Chamorro, Erick Puglla y David Pesántez en el lenguaje C, 
+con el objetivo de crear un programa simple de matriculación de vehículos, que cumpla con las respetivas
+validaciones y necesidades del usuario. 
+
