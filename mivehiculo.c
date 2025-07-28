@@ -85,7 +85,7 @@ int guardarDatos(Vehiculo lista[], char* hora){
 	for (int i = 0; i < numVehiculo; i++){
 		fprintf(archivo, "\n--------REGISTRO VEHICULAR--------\n");
 		fprintf(archivo, "=====================================\n");
-		fprintf(archivo, "VEHICULO N %d\n", i + 1);
+		fprintf(archivo, "VEHICULO N: %d\n", i + 1);
 		fprintf(archivo, "=====================================\n");
 		fprintf(archivo, "PLACA: %s\nCEDULA: %s\nTIPO: %s\nAÑO: %d\nAVALUO: %.2lf\n-------------------------------------\n", 
 			lista[i].placa, 
