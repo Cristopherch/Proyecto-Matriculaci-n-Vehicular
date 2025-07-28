@@ -32,7 +32,7 @@ void imprimirVehiculo(Vehiculo registrado){
 	printf("Placa: %s \n", registrado.placa);
 	printf("Cedula: %s \n", registrado.cedula);
 	printf("Tipo: %s\n", registrado.tipo);
-	printf("Año: %d \n", registrado.anio);
+	printf("AÃ±o: %d \n", registrado.anio);
 	printf("Avaluo: %.2lf \n", registrado.avaluo);
 }
 
@@ -85,9 +85,9 @@ int guardarDatos(Vehiculo lista[], char* hora){
 	for (int i = 0; i < numVehiculo; i++){
 		fprintf(archivo, "\n--------REGISTRO VEHICULAR--------\n");
 		fprintf(archivo, "=====================================\n");
-		fprintf(archivo, "VEHICULO N° %d\n", i + 1);
+		fprintf(archivo, "VEHICULO N %d\n", i + 1);
 		fprintf(archivo, "=====================================\n");
-		fprintf(archivo, "PLACA: %s\nCEDULA: %s\nTIPO: %s\nAÑO: %d\nAVALUO: %.2lf\n-------------------------------------\n", 
+		fprintf(archivo, "PLACA: %s\nCEDULA: %s\nTIPO: %s\nAÃ‘O: %d\nAVALUO: %.2lf\n-------------------------------------\n", 
 			lista[i].placa, 
 			lista[i].cedula, 
 			lista[i].tipo, 
@@ -107,7 +107,7 @@ void menuVehicular(){
 	printf("================================================\n");
 	printf("1. Registrar datos del vehiculo\n");
 	printf("2. Calcular matricula\n");
-	printf("3. Buscar vehículo por placa\n");
+	printf("3. Buscar vehÃ­culo por placa\n");
 	printf("4. Imprimir listado de vehiculos matriculados\n");
 	printf("5. Salir\n");
 }
