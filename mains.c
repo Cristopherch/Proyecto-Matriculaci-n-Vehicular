@@ -21,7 +21,7 @@ int main() {
 	
 	while(1){
 		printf("\n==================================================");
-		printf("\n   BIENVENIDO AL SISTEMA DE MATRICULACION 2025   \n"); //Menú de inicio de sesión antes de ingresar al menú vehicular
+		printf("\n   BIENVENIDO AL SISTEMA DE MATRICULACION 2025   \n"); //MenÃº de inicio de sesiÃ³n antes de ingresar al menÃº vehicular
 		printf("==================================================\n");
 		printf("               Inicio de sesion            \n\n");
 		do{
@@ -44,23 +44,23 @@ int main() {
 			printf("\n-------------------------------------------------\n");
 			printf("CONTRASENA:\n");
 			printf("-------------------------------------------------\n");
-			printf("Ingrese su contraseña (8-10 caracteres): ");
+			printf("Ingrese su contraseÃ±a (8-10 caracteres): ");
 			scanf("%s", contrasena);
 			getchar();
-			validaContra = validacionContrasena(contrasena);//recibe el número que retorna la función
+			validaContra = validacionContrasena(contrasena);//recibe el nÃºmero que retorna la funciÃ³n
 			if (validaContra == 0){
-				printf("La contraseña debe tener de 8 a 10 caracteres.\n");//Si es 0 entonces la contraseña ingresada no era de la forma correcta
+				printf("La contraseÃ±a debe tener de 8 a 10 caracteres.\n");//Si es 0 entonces la contraseÃ±a ingresada no era de la forma correcta
 			}
 			
 		} while(validaContra == 0);
 		
 		system("cls");
 		
-		existencia = validacionUsuario(cedula, contrasena);//retrona el valor de la función
+		existencia = validacionUsuario(cedula, contrasena);//retrona el valor de la funciÃ³n
 		if (existencia == 1){
 			system("cls");
 			printf("\n================================\n");
-			printf("    Inicio de sesion exitoso    \n");//Si es 1 entonces el correo y contraseña ingresadas existen y esta registrados
+			printf("    Inicio de sesion exitoso    \n");//Si es 1 entonces el correo y contraseÃ±a ingresadas existen y esta registrados
 			printf("================================\n");
 			printf("Presione Enter para continuar...\n");
 			while(getchar() != '\n');
@@ -72,15 +72,15 @@ int main() {
 					printf("Ingrese una opcion (1-5): ");
 					fgets(entrada, sizeof(entrada), stdin);
 					
-					// Eliminar el salto de línea
+					// Eliminar el salto de lÃ­nea
 					entrada[strcspn(entrada, "\n")] = '\0';
 					
-					// Comprobar que solo tiene un carácter numérico entre '1' y '6'
+					// Comprobar que solo tiene un carÃ¡cter numÃ©rico entre '1' y '6'
 					if (strlen(entrada) == 1 && entrada[0] >= '1' && entrada[0] <= '5') {
-						opcion = entrada[0] - '0'; // Convertir carácter a número
+						opcion = entrada[0] - '0'; // Convertir carÃ¡cter a nÃºmero
 						break;
 					} else {
-						printf("Error: debe ingresar un numero del 1 al 6.\n");
+						printf("Error: debe ingresar un numero del 1 al 5.\n");
 					}
 				} while (1);
 				
@@ -107,42 +107,42 @@ int main() {
 							printf("ERROR: no introdujo letras primero\n");
 						}
 						if (validacionSigno == 0){
-							printf("ERROR: no ha ingresado el signo guión\n");
+							printf("ERROR: no ha ingresado el signo guion\n");
 						}
 						if (validacionNumero == 0){
-							printf("ERROR: no ha ingresado digitos en las últimas 3 posiciones\n");
+							printf("ERROR: no ha ingresado digitos en las ultimas 3 posiciones\n");
 						}
 					} while(validacionLetra == 0 || validacionSigno == 0 || validacionNumero == 0);
 					
 					do{
-						printf("Ingrese Tipo de vehículo (liviano o pesado): ");
+						printf("Ingrese Tipo de vehÃ­culo (liviano o pesado): ");
 						fgets(tipo, sizeof(tipo), stdin);
 						tipo[strcspn(tipo, "\n")] = '\0';
 						aMinusculas(tipo);
 						
 						validacionTi = validacionTipo(tipo);
 						if (validacionTi == 0){
-							printf("No ha ingresado el tipo de vehículo\n");
+							printf("No ha ingresado el tipo de vehiculo\n");
 						}
 					} while(validacionTi == 0);
 					
 					
 					do{
-						printf("Ingrese el año(2000 a 2025): ");
+						printf("Ingrese el aÃ±o(2000 a 2025): ");
 						fgets(anio1, sizeof(anio1), stdin);
 						validarAnio = esNumero(anio1);
 						if (validarAnio == 0){
-							printf("ERROR: año invalido\n");
+							printf("ERROR: aÃ±o invalido\n");
 							continue;
 						}
 						
 						anio = atoi(anio1);
 						if (anio == 0 && anio1[0] != '0') {
-							errorLog("Conversión inválida de cadena a número");
+							errorLog("Conversion invalida de cadena a numero");
 						}
 						
 						if (anio < 2000 || anio > 2025){
-							printf("El año debe ser entre 2000 y 2025.\n");
+							printf("El aÃ±o debe ser entre 2000 y 2025.\n");
 							validarAnio = 0;
 							continue;
 						}
@@ -150,7 +150,7 @@ int main() {
 					
 					
 					do{
-						printf("Ingrese el avalúo ($2000.00 hasta $400000.00):");
+						printf("Ingrese el avaluo ($2000.00 hasta $400000.00):");
 						fgets(avaluo1, sizeof(avaluo1), stdin);
 						avaluo1[strcspn(avaluo1, "\n")] = '\0';
 						validarAvaluo = esNumero(avaluo1);
@@ -161,14 +161,14 @@ int main() {
 						
 						avaluo = atof(avaluo1);
 						if (avaluo == 0 && avaluo1[0] != '0') {
-							errorLog("Conversión inválida de cadena a número");
+							errorLog("Conversion invalida de cadena a nÃºmero");
 							validarAvaluo = 0;
 							continue;
 						}
 						
 						avaluoTemp = validacionAvaluo(avaluo);
 						if (avaluoTemp == 0){
-							printf("El avaluó no cumple con las condiciones.\n");
+							printf("El avaluo no cumple con las condiciones.\n");
 							validarAvaluo = 0;
 							continue;
 						}
@@ -196,8 +196,8 @@ int main() {
 					printf("==================================================================================\n");
 					printf("                                CALCULAR MATRICULA                                \n");
 					printf("==================================================================================\n");
-					// Imprimir comprobante de matrícula para un vehículo específico
-					printf("Ingrese placa del vehiculo para calcular matrícula (Ejemplo: ABC-1234): ");
+					// Imprimir comprobante de matrÃ­cula para un vehÃ­culo especÃ­fico
+					printf("Ingrese placa del vehiculo para calcular matricula (Ejemplo: ABC-1234): ");
 					fgets(placaBusqueda, sizeof(placaBusqueda), stdin);
 					aMayusculas(placaBusqueda);
 					placaBusqueda[strcspn(placaBusqueda, "\n")] = '\0';
@@ -213,10 +213,10 @@ int main() {
 					} else {
 						Vehiculo vehiculo = listaVehicular[placaEncontrada];
 						
-						// Solicitar número de revisiones técnicas cumplidas
+						// Solicitar nÃºmero de revisiones tÃ©cnicas cumplidas
 						int revisionesCumplidas;
 						do {
-							printf("Ingrese numero de revisiones técnicas cumplidas (0 - 2): ");
+							printf("Ingrese numero de revisiones tecnicas cumplidas (0 - 2): ");
 							if (scanf("%d", &revisionesCumplidas) != 1) {
 								printf("Entrada invalida. Por favor, ingrese un numero.\n");
 								while(getchar() != '\n'); // Clear the input buffer
@@ -226,8 +226,8 @@ int main() {
 							if (revisionesCumplidas == 0) {
 								while (getchar() != '\n');
 								printf("\n---------------------------------------------------------------------");
-								printf("\nERROR: El vehículo debe tener al menos 1 revisión técnica cumplida\n");
-								printf("El proceso de matriculación no puede continuar.\n");
+								printf("\nERROR: El vehiculo debe tener al menos 1 revisiÃ³n tecnica cumplida\n");
+								printf("El proceso de matriculacion no puede continuar.\n");
 								printf("----------------------------------------------------------------------\n");
 								printf("Presione Enter...");
 								while (getchar() != '\n'); // Limpiar buffer
@@ -243,22 +243,22 @@ int main() {
 						} while (1);
 						
 						if(revisionesCumplidas == 0) {
-							continue; // Regresa al menú principal
+							continue; // Regresa al menÃº principal
 						}
 						
-						// Resto del proceso de matriculación solo si hay revisiones >= 1
+						// Resto del proceso de matriculaciÃ³n solo si hay revisiones >= 1
 						while(getchar() != '\n'); // Limpiar buffer
 						
 						int mesesRetraso;
 						do {
-							printf("Ingrese los meses de retraso en la matriculación (0 - 12): ");
+							printf("Ingrese los meses de retraso en la matriculacion (0 - 12): ");
 							if (scanf("%d", &mesesRetraso) != 1) {
-								printf("Entrada inválida. Por favor, ingrese un número.\n");
+								printf("Entrada invalida. Por favor, ingrese un numero.\n");
 								while(getchar() != '\n'); // Clear the input buffer
 								continue;
 							}
 							if (mesesRetraso < 0 || mesesRetraso > 12) {
-								printf("Meses inválidos, debe ser 0 - 12.\n");
+								printf("Meses invalidos, debe ser 0 - 12.\n");
 							} else {
 								break;
 							}
@@ -275,14 +275,14 @@ int main() {
 							}
 							
 							if (!doubleValido(multas1)){
-								printf("Ingrese un valor válido.\n");
+								printf("Ingrese un valor vÃ¡lido.\n");
 								continue;
 							}
 							
 							multas = strtod(multas1, NULL);
 							
 							if (multas < 0 || multas > 4600){
-								printf("Valor fuera del límite, ingrese un valor válido. \n");
+								printf("Valor fuera del lÃ­mite, ingrese un valor vÃ¡lido. \n");
 								continue;
 							}
 							break;
@@ -293,7 +293,7 @@ int main() {
 						totalMatricula = calcularYMostrarMatricula(vehiculo, revisionesCumplidas, mesesRetraso, multas, &matricula);
 						
 						do{
-							printf("¿DESEA PAGAR LA MATRICULA AHORA?(s/n)\n");
+							printf("Â¿DESEA PAGAR LA MATRICULA AHORA?(s/n)\n");
 							fgets(respuesta3, sizeof(respuesta3), stdin);
 							
 							if (respuesta3[0] == 's' || respuesta3[0] == 'S'){
@@ -305,12 +305,12 @@ int main() {
 									printf("Ingrese una opcion (1-2): ");
 									fgets(entrada1, sizeof(entrada1), stdin);
 									
-									// Eliminar el salto de línea
+									// Eliminar el salto de lÃ­nea
 									entrada1[strcspn(entrada1, "\n")] = '\0';
 									
-									// Comprobar que solo tiene un carácter numérico entre '1' y '2'
+									// Comprobar que solo tiene un carÃ¡cter numÃ©rico entre '1' y '2'
 									if (strlen(entrada1) == 1 && entrada[0] >= '1' && entrada1[0] <= '2') {
-										metodoPago = entrada1[0] - '0'; // Convertir carácter a número
+										metodoPago = entrada1[0] - '0'; // Convertir carÃ¡cter a nÃºmero
 										break;
 									} else {
 										printf("Error: debe ingresar un numero del 1 al 2\n");
@@ -325,7 +325,7 @@ int main() {
 									break;
 								case 2:
 									printf("---------------------------------\n");
-									printf("Esperando confirmación de pago...\n");
+									printf("Esperando confirmaciÃ³n de pago...\n");
 									printf("---------------------------------\n");
 									break;
 								default:
@@ -355,7 +355,7 @@ int main() {
 						} while(respuesta3[0] != 's' && respuesta3[0] != 'S' && respuesta3[0] != 'n' && respuesta3[0] != 'N');
 						
 						do{
-							printf("¿Desea guardar los datos?(s/n):\n");
+							printf("Â¿Desea guardar los datos?(s/n):\n");
 							fgets(respuesta, sizeof(respuesta), stdin);
 							
 							system("cls");
@@ -458,11 +458,11 @@ int main() {
 			} while(opcion!=5);
 			break;
 		} else if (existencia == 2){
-			printf("Contrasena incorrecta, no coincide con la registrada.\n");//Si es entonces la contraseña del correo registrado no es correcta
+			printf("Contrasena incorrecta, no coincide con la registrada.\n");//Si es entonces la contraseÃ±a del correo registrado no es correcta
 		} else{
 			do{
 				printf("---------------------------------------------------\n");
-				printf("Usuario sin registrar. ¿Desea registrarse? (s/n): ");
+				printf("Usuario sin registrar. Â¿Desea registrarse? (s/n): ");
 				printf("\n---------------------------------------------------\n");
 				fgets(respuesta1, sizeof(respuesta1), stdin);
 				
@@ -470,7 +470,7 @@ int main() {
 					system("cls");
 					printf("\n=================================\n");
 					registroUsuario(cedula, contrasena);
-					printf("    Ahora puede iniciar sesión    \n");//Si pone que desea registrarse, el correo y contraseña ingresados se guardan como registrados
+					printf("    Ahora puede iniciar sesion    \n");//Si pone que desea registrarse, el correo y contraseÃ±a ingresados se guardan como registrados
 					printf("===================================\n");
 					printf("Presione Enter para continuar...\n");
 					while(getchar() != '\n');
@@ -479,7 +479,7 @@ int main() {
 				} else if (tolower(respuesta1[0]) == 'n'){
 					system("cls");
 					printf("\n=================================\n");
-					printf("   No se registró ningún usuario   \n");//Si no, entonces le devuelve a que inicie sesión
+					printf("   No se registro ningun usuario   \n");//Si no, entonces le devuelve a que inicie sesiÃ³n
 					printf("=================================\n");
 					printf("Presione Enter para continuar...\n");
 					while(getchar() != '\n');
