@@ -46,9 +46,9 @@ double calcularYMostrarMatricula(Vehiculo vehiculo, int revisionesCumplidas, int
 	
 	int tasaMatricula = (strcmp(vehiculo.tipo, "liviano") == 0)? 2 : 5; // % para liviano, 5% para pesado
 	double impuestoVehicular = vehiculo.avaluo * (tasaMatricula / 100.0);
-	double impuestoRodaje = (strcmp(vehiculo.tipo, "pesado") == 0) ? 300.0 : 100.0; // Fijo según tipo
-	// Asignar revisiones técnicas
-	double rtv1 = (revisionesCumplidas > 0) ? 1 : 0; // Suponiendo que hay al menos una revisión cumplida
+	double impuestoRodaje = (strcmp(vehiculo.tipo, "pesado") == 0) ? 300.0 : 100.0; // Fijo segÃºn tipo
+	// Asignar revisiones tÃ©cnicas
+	double rtv1 = (revisionesCumplidas > 0) ? 1 : 0; // Suponiendo que hay al menos una revisiÃ³n cumplida
 	double rtv2 = (revisionesCumplidas > 1) ? 1 : 0; // Suponiendo que hay al menos dos revisiones cumplidas
 	
 	double recargos = (2 - (rtv1 + rtv2)) * (0.05 * impuestoVehicular); // Recargos por revisiones
@@ -70,18 +70,18 @@ double calcularYMostrarMatricula(Vehiculo vehiculo, int revisionesCumplidas, int
 	printf("\n        Comprobante de Matriculacion      \n");
 	printf("==========================================\n");
 	printf("%s\n", hora);
-	printf("Cédula: %s\n", vehiculo.cedula);
-	printf("Año: %d\n", vehiculo.anio);
+	printf("CÃ©dula: %s\n", vehiculo.cedula);
+	printf("AÃ±o: %d\n", vehiculo.anio);
 	printf("Tipo: %s\n", vehiculo.tipo);
-	printf("Avalúo: %.2lf\n", vehiculo.avaluo);
+	printf("Avaluo: %.2lf\n", vehiculo.avaluo);
 	printf("Impuesto Vehicular: %.2lf\n", matricula->impuestoVehicular);
 	printf("Impuesto Rodaje: %.2lf\n", matricula->impuestoRodaje);
-	printf("Revisiones Técnicas (RTV1, RTV2): %.0lf, %.0lf\n", matricula->rtv[0], matricula->rtv[1]);
+	printf("Revisiones Tecnicas (RTV1, RTV2): %.0lf, %.0lf\n", matricula->rtv[0], matricula->rtv[1]);
 	printf("Recargos: %.2lf\n", matricula->recargos);
 	printf("Multas: %.2lf\n", matricula->multas);
 	printf("Retraso Matriculacion: %.2lf\n", matricula->retrasoMatriculacion);
 	printf("\n=========================================\n");
-	printf("Valor Total a Pagar Matrícula: %.2lf\n", totalMatricula);
+	printf("Valor Total a Pagar Matricula: %.2lf\n", totalMatricula);
 	printf("=========================================\n\n");
 	
 	return totalMatricula;
@@ -101,13 +101,13 @@ int guardarDatosVehiculares(Vehiculo lista[], Matriculacion *matricula, int posi
 	
 	fprintf(archivo, "\n--------------MATRICULAS--------------\n");
 	fprintf(archivo, "======================================\n");
-	fprintf(archivo, "PLACA: %s\nCEDULA: %s\nTIPO: %s\nAÑO: %d\nAVALUO: %.2lf\n",
+	fprintf(archivo, "PLACA: %s\nCEDULA: %s\nTIPO: %s\nAÃ‘O: %d\nAVALUO: %.2lf\n",
 			lista[posicion].placa,
 			lista[posicion].cedula,
 			lista[posicion].tipo,
 			lista[posicion].anio,
 			lista[posicion].avaluo);
-	fprintf(archivo, "IMPUESTO VEHICULAR: %.2lf\nIMPUESTO RODAJE: %.2lf\nREVISIONES TÉCNICAS(RTV1, RTV2): %.0lf, %0lf	\nRECARGOS: %.2lf\nMULTAS: %.2lf\nRETRASO MATRICULACION: %.2lf\n",
+	fprintf(archivo, "IMPUESTO VEHICULAR: %.2lf\nIMPUESTO RODAJE: %.2lf\nREVISIONES TECNICAS(RTV1, RTV2): %.0lf, %0lf	\nRECARGOS: %.2lf\nMULTAS: %.2lf\nRETRASO MATRICULACION: %.2lf\n",
 			matricula->impuestoVehicular,
 			matricula->impuestoRodaje,
 			matricula->rtv[0], matricula->rtv[1],
