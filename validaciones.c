@@ -141,7 +141,7 @@ int esNumero(const char* cadena) {
 		if (isdigit(cadena[i])){
 			digitos++;
 		} else if (cadena[i] == '.'){
-			if (puntoEncontrado) return 0;
+			if (puntoEncontrado) return 0;// Si puntoEncontrado ya es 1 entonces devuelve 0
 			puntoEncontrado = 1;
 		} else {
 			return 0;
@@ -153,9 +153,9 @@ int esNumero(const char* cadena) {
 
 int doubleValido(const char* cadena){
 	char* ptr;
-	strtod(cadena, &ptr);
+	strtod(cadena, &ptr); // Transforma una cadena a un double con decimales
 	
-	if (cadena == ptr || (*ptr != '\n' && *ptr != '\0')){
+	if (cadena == ptr || (*ptr != '\n' && *ptr != '\0')){// Si la cadena tiene un carácter no digital, punto decimal o salto de línea retorna 0 como error.
 		return 0;
 	}
 	
